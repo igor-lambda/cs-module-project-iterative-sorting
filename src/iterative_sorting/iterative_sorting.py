@@ -36,5 +36,25 @@ def bubble_sort(arr):
 
 def count_sort(arr, maximum=-1):
     # Your code here
+    count_arr = [0] * 10
 
+    # Add count of item in arr at count_arr[item]
+    for i in arr:
+        count_arr[i] = count_arr[i] + 1
+
+    # Count of next item in array is addition of next and last
+    for i in range(len(arr) - 1):
+        count_arr[i+1] = count_arr[i+1] + count_arr[i]
+    
+    new_arr = [0] * (len(arr) - 1)
+    print(new_arr, 'new_arr')
+    for i in arr:
+        for j in count_arr:
+            # print(new_arr[count_arr[i]], "new_count[count_arr[i]]")
+            # new_arr[count_arr[i]] = i
+            new_arr[count_arr[i] - 1 ] = i
+        count_arr[i] = (count_arr[i] - 1) 
+    
+    print(new_arr)
     return arr
+
