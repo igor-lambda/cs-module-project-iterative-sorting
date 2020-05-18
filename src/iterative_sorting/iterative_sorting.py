@@ -14,7 +14,7 @@ def selection_sort(arr):
         # Your code here
         temp = arr[i]
         arr[i] = arr[cur_index]
-        arr[cur_index] = temp 
+        arr[cur_index] = temp
 
     return arr
 
@@ -22,7 +22,12 @@ def selection_sort(arr):
 
 
 def bubble_sort(arr):
-    # Your code here
+    for i in range(0, len(arr)):
+        for j in range(0, len(arr) - i - 1):
+            if arr[j] > arr[j + 1]:
+                temp = arr[j]
+                arr[j] = arr[j+1]
+                arr[j+1] = temp
 
     return arr
 
